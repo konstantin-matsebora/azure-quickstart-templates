@@ -17,4 +17,5 @@ jobs:
           mdbook-version: '0.4.1'
           # mdbook-version: 'latest'
 
+      - run: mdbook init
       - run: mdbook build

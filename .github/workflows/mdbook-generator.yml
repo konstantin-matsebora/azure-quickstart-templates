@@ -10,14 +10,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-
+      - uses: addnab/docker-run-action@v1
+        with:
+         image: ounata/mdbook-generate-summary
       - name: Setup mdBook
         uses: peaceiris/actions-mdbook@v1
         with:
           mdbook-version: '0.4.1'
           # mdbook-version: 'latest'
-
-      - run: mdbook init
       - run: mdbook build
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3

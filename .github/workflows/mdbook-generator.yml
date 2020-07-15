@@ -3,7 +3,7 @@ name: mdbook-generator
 on:
   push:
     branches:
-      - ARC-AK8S-89
+      - master
 
 jobs:
   deploy:

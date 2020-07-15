@@ -1,0 +1,20 @@
+name: mdbook-generator
+
+on:
+  push:
+    branches:
+      - ARC-AK8S-89
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup mdBook
+        uses: peaceiris/actions-mdbook@v1
+        with:
+          mdbook-version: '0.4.1'
+          # mdbook-version: 'latest'
+
+      - run: mdbook build

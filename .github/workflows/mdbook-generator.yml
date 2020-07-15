@@ -19,10 +19,8 @@ jobs:
 
       - run: mdbook init
       - run: mdbook build
-      - name: Auto commit
-        uses: stefanzweifel/git-auto-commit-action@v2.1.0
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          commit_message: Apply automatic changes - mdbook generated
-          branch: master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./book

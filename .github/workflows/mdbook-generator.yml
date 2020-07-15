@@ -13,6 +13,7 @@ jobs:
       - uses: addnab/docker-run-action@v1
         with:
          image: younata/mdbook-generate-summary
+         run: mdbook-generate-summary
       - name: Setup mdBook
         uses: peaceiris/actions-mdbook@v1
         with:
